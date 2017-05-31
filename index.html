@@ -22,7 +22,7 @@
         if (getParameterByName('action') === 'cookieFix') {
             var url = getParameterByName('blkbURL');
             document.cookie = "name=Safari Cookie";
-            window.top.location.href = url;
+            window.location.href = url;
         }
         else {
             document.cookie = "name=Some Cookie";
