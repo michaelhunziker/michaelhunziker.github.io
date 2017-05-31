@@ -22,7 +22,7 @@
         if (getParameterByName('action') === 'cookieFix') {
             var url = getParameterByName('blkbURL');
             document.cookie = "name=Safari Cookie";
-            window.location.href = url;
+            //window.location.href = url;
         }
         else {
             document.cookie = "name=Some Cookie";
@@ -55,6 +55,7 @@ Debug:<span id="debug"></span>
         document.getElementById("confirm").style.display = 'block';
     }
     document.getElementById("cookie").textContent = cookieContent;
+    document.getElementById("debug").textContent = 'window.location.href:' + window.location.href + '###window.parent.location.href:' + window.parent.location.href + '###window.top.location.href:' + window.top.location.href ;
 </script>
 
 </html>
