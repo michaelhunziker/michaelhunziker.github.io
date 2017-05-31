@@ -33,13 +33,14 @@
        }  
 
        function postMessage(){
+              
               parent.postMessage("Test Message","*");
        } 
 
        function showPopup(){
               //window.open('popup.html', 'popup window', 'width=200,height=200');  
-              
-              window.parent.postMessage({name: 'safariCookieFix'});
+              alert('sending postmessage: safariCookieFix');
+              window.parent.postMessage({name: 'safariCookieFix'}, "*");
               
        } 
               
