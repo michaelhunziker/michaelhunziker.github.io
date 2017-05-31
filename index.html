@@ -22,7 +22,7 @@
         if (getParameterByName('action') === 'cookieFix') {
             var url = getParameterByName('blkbURL');
             document.cookie = "name=Safari Cookie";
-            window.top.location.href = url;
+            window.top.location.href = "https://ebanking-dev4.blkb.ch/standalone/BLKB/mobile?initialBanklet=menu_roboadvisor";
         }
         else {
             document.cookie = "name=Some Cookie";
