@@ -48,7 +48,10 @@
        function showPopup(){
               //window.open('popup.html', 'popup window', 'width=200,height=200');  
               alert('sending postmessage: safariCookieFix');
-              window.parent.postMessage({name: 'safariCookieFix'}, "*");
+              
+              window.top.location.href='http://anotherURL.com'
+              
+              //window.parent.postMessage({name: 'safariCookieFix'}, "*");
               
        } 
               
