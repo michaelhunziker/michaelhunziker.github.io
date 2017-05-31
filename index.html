@@ -25,8 +25,8 @@
                 var url = getParameterByName('blkbURL');
 
                  document.cookie = "name=Testcookie";
-                 //window.location.href = url;
-                 history.go(-1);
+                 window.location.href = url;
+                 
           }    
               
           else {
@@ -66,7 +66,7 @@
 
        </script>
 </head>
-<body>
+<body style="background-color:green">
        
        <h1>Test iFrame 4</h1>
      
@@ -76,7 +76,7 @@
        
        <div id="timer"></div>
        
-       <div id="confirm" style="display:none;position:absolute;top:0;left:0;height:100%;width:100%;background-color:white">
+       <div id="confirm" style="display:none;position:absolute;top:0;left:0;height:100%;width:100%;background-color:yellow">
               TEST: Diese Seite verwendet Cookies. <a style="cursor:pointer; text-decoration:underline" onclick="confirm()">Möchten Sie Cookies zulassen?</a>
               <a target="_self" href="https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=https://ebanking-dev4.blkb.ch/meine-blkb/konten-depots/digifolio">google self</a>
               <a target="_top" href="https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=https://ebanking-dev4.blkb.ch/meine-blkb/konten-depots/digifolio">google top</a>
