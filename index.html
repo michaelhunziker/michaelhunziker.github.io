@@ -23,10 +23,9 @@
           
           if (action === 'cookieFix') {
                 var url = getParameterByName('blkbURL');
-                 alert('cookieFix');
-                 alert(url);
+
                  document.cookie = "name=Testcookie";
-                 window.location.href = url;
+                 //window.location.href = url;
           }    
               
           else {
@@ -72,6 +71,8 @@
      
        Cookie: <span id="cookie"></span>
        
+       Debug: <div id="debug"></div>
+       
        <div id="timer"></div>
        
        <div id="confirm" style="display:none;position:absolute;top:0;left:0;height:100%;width:100%;background-color:white">
@@ -92,6 +93,7 @@
 
        document.getElementById("cookie").textContent = cookieContent;
        document.getElementById("timer").textContent = new Date();
+       document.getElementById("debug").textContent =  'blkbURL: ' + getParameterByName('blkbURL');
      
 </script>
 </html>
