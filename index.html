@@ -23,9 +23,17 @@
           
           if (action === 'cookieFix') {
                  alert('fix cookie');
-           document.cookie = "name=PopUp Gabriel Brodmann";
-           window.location.href = getParameterByName('blkbURL');
-          }       
+                 document.cookie = "name=Testcookie";
+                 
+                 
+           //window.location.href = getParameterByName('blkbURL');
+          }    
+              
+          else {
+              document.cookie = "name=Gabriel Brodmann";
+              var cookieContent = document.cookie;
+                 
+          }
                
 
        function windowLocation(){
@@ -44,12 +52,11 @@
               
        } 
               
-              function reload() {
-               window.location.href = window.location.href;      
-              }
+       function reload() {
+              window.location.href = window.location.href;      
+       }
 
-       document.cookie = "name=Gabriel Brodmann";
-       var cookieContent = document.cookie;
+
             
 
        </script>
