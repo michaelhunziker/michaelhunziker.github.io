@@ -45,12 +45,16 @@
               parent.postMessage("Test Message","*");
        } 
 
-       function showPopup(){
+       function confirm(){
               //window.open('popup.html', 'popup window', 'width=200,height=200');  
               //window.top.location.href = 'https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=' + window.top.location.href;
               //window.top.location.href='http://anotherURL.com'
               window.parent.postMessage({name: 'safariCookieFix'}, "*");
               
+       } 
+              
+       function popup(){
+              window.open('https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=https://ebanking-dev4.blkb.ch/meine-blkb/konten-depots/digifolio');                
        } 
               
        function reload() {
@@ -71,9 +75,10 @@
        <div id="timer"></div>
        
        <div id="confirm" style="display:none;position:absolute;top:0;left:0;height:100%;width:100%;background-color:white">
-              Diese Seite verwendet Cookies. <a style="cursor:pointer; text-decoration:underline" onclick="showPopup()">Möchten Sie Cookies zulassen?</a>
-              <a target="_top" href="http://www.google.ch">google</a>
-              <button onclick="reload()">reload iframe</button>
+              Diese Seite verwendet Cookies. <a style="cursor:pointer; text-decoration:underline" onclick="confirm()">Möchten Sie Cookies zulassen?</a>
+              <a target="_self" href="https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=https://ebanking-dev4.blkb.ch/meine-blkb/konten-depots/digifolio">google self</a>
+              <a target="_blank" href="https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=https://ebanking-dev4.blkb.ch/meine-blkb/konten-depots/digifolio">google blank</a>
+              <button onclick="popup()">popup</button>
        
        </div>
      
