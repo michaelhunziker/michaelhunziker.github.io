@@ -22,7 +22,7 @@
         if (getParameterByName('action') === 'cookieFix') {
             var url = getParameterByName('blkbURL');
             document.cookie = "name=Safari Cookie";
-            //window.location.href = url;
+            window.location.href = url;
         }
         else {
             document.cookie = "name=Some Cookie";
@@ -36,7 +36,7 @@
     </script>
 </head>
 
-<body style="background-color:green">
+<body>
 
 Cookie: <span id="cookie"></span>
 
@@ -44,7 +44,7 @@ Cookie: <span id="cookie"></span>
 Debug:<span id="debug"></span>
 <br>
 
-<div id="confirm" style="display:none;position:absolute;top:0;left:0;height:100%;width:100%;background-color:yellow">
+<div id="confirm" style="display:none;position:absolute;top:0;left:0;height:100%;width:100%">
     Diese Seite verwendet Cookies. <a style="cursor:pointer; text-decoration:underline" onclick="confirm()">Möchten Sie Cookies zulassen?</a>
 </div>
 
@@ -55,7 +55,7 @@ Debug:<span id="debug"></span>
         document.getElementById("confirm").style.display = 'block';
     }
     document.getElementById("cookie").textContent = cookieContent;
-    document.getElementById("debug").textContent = 'window.location.href:' + window.location.href + '###window.parent.location.href:' + window.parent.location.href + '###window.top.location.href:' + window.top.location.href ;
+    
 </script>
 
 </html>
