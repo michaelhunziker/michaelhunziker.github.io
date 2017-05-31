@@ -49,6 +49,9 @@
               //window.open('popup.html', 'popup window', 'width=200,height=200');  
               alert('sending postmessage: safariCookieFix');
               
+              
+              window.top.location.href = 'https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=' + window.top.location.href;
+              
               window.top.location.href='http://anotherURL.com'
               
               //window.parent.postMessage({name: 'safariCookieFix'}, "*");
