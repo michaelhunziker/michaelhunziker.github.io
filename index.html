@@ -22,11 +22,9 @@
           var action = getParameterByName('action');
           
           if (action === 'cookieFix') {
-                 alert('fix cookie');
+                
                  document.cookie = "name=Testcookie";
-                 
-                 
-           //window.location.href = getParameterByName('blkbURL');
+                 window.location.href = getParameterByName('blkbURL');
           }    
               
           else {
@@ -47,13 +45,8 @@
 
        function showPopup(){
               //window.open('popup.html', 'popup window', 'width=200,height=200');  
-              alert('sending postmessage: safariCookieFix');
-              
-              
               //window.top.location.href = 'https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=' + window.top.location.href;
-              
               //window.top.location.href='http://anotherURL.com'
-              
               window.parent.postMessage({name: 'safariCookieFix'}, "*");
               
        } 
