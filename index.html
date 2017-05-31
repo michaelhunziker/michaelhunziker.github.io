@@ -1,105 +1,61 @@
-
-       <html>
+<html>
 
 <head>
-       <meta charset="utf-8">
-        <title>Test4</title>
-       
-       <script>
-              
+    <meta charset="utf-8">
+    <title></title>
 
-              
-      function getParameterByName(name, url) {
-           if (!url) url = window.location.href;
-           name = name.replace(/[\[\]]/g, "\\$&");
-           var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-               results = regex.exec(url);
-           if (!results) return null;
-           if (!results[2]) return '';
-           return decodeURIComponent(results[2].replace(/\+/g, " "));
-          }
-          
-          var action = getParameterByName('action');
-          
-          if (action === 'cookieFix') {
-                var url = getParameterByName('blkbURL');
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) {
+                url = window.location.href;
+            }
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) {
+                return null;
+            }
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
 
-                 document.cookie = "name=Testcookie";
-                 window.parent.location.href = url;
-                 
-          }    
-              
-          else {
-              document.cookie = "name=Some Cookie";
-              var cookieContent = document.cookie;
-                 
-          }
-               
+        if (getParameterByName('action') === 'cookieFix') {
+            var url = getParameterByName('blkbURL');
+            document.cookie = "name=Safari Cookie";
+            window.parent.location.href = url;
+        }
+        else {
+            document.cookie = "name=Some Cookie";
+            var cookieContent = document.cookie;
+        }
 
-       function windowLocation(){
-              window.location.href = window.location.href;
-       }  
+        function confirm() {
+            window.parent.postMessage({name: 'safariCookieFix'}, "*");
+        }
 
-       function postMessage(){
-              
-              parent.postMessage("Test Message","*");
-       } 
-
-       function confirm(){
-              //window.open('popup.html', 'popup window', 'width=200,height=200');  
-              //window.top.location.href = 'https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=' + window.top.location.href;
-              //window.top.location.href='http://anotherURL.com'
-              window.parent.postMessage({name: 'safariCookieFix'}, "*");
-              
-       } 
-              
-       function popup(){
-              window.open('https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=https://ebanking-dev4.blkb.ch/meine-blkb/konten-depots/digifolio');                
-       } 
-              
-       function reload() {
-              window.location.href = window.location.href;      
-       }
-
-
-            
-
-       </script>
+    </script>
 </head>
+
 <body style="background-color:green">
-       
-       <h1>Test iFrame 4</h1>
-     
-       
-       Cookie: <span id="cookie"></span>
-       
-       <br>
-       Debug2: <div id="debug"></div>
-       
-       <br>
-       
-       <div id="timer"></div>
-       
-       <div id="confirm" style="display:none;position:absolute;top:0;left:0;height:100%;width:100%;background-color:yellow">
-              TEST: Diese Seite verwendet Cookies. <a style="cursor:pointer; text-decoration:underline" onclick="confirm()">Möchten Sie Cookies zulassen?</a>
-              <a target="_self" href="https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=https://ebanking-dev4.blkb.ch/meine-blkb/konten-depots/digifolio">google self</a>
-              <a target="_top" href="https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=https://ebanking-dev4.blkb.ch/meine-blkb/konten-depots/digifolio">google top</a>
-              <a target="_parent" href="https://michaelhunziker.github.io/index.html#?action=cookieFix&blkbURL=https://ebanking-dev4.blkb.ch/meine-blkb/konten-depots/digifolio">google parent</a>
 
-       
-       </div>
-     
+Cookie: <span id="cookie"></span>
+
+<br>
+Debug:<span id="debug"></span>
+<br>
+
+<div id="confirm" style="display:none;position:absolute;top:0;left:0;height:100%;width:100%;background-color:yellow">
+    Diese Seite verwendet Cookies. <a style="cursor:pointer; text-decoration:underline" onclick="confirm()">Möchten Sie Cookies zulassen?</a>
+</div>
+
 </body>
+
 <script>
-
-       if(document.cookie === ''){
-              document.getElementById("confirm").style.display = 'block';
-       }
-
-       document.getElementById("cookie").textContent = cookieContent;
-       document.getElementById("timer").textContent = new Date();
-       document.getElementById("debug").textContent =  'blkbURL: ' + getParameterByName('blkbURL');
-     
+    if (document.cookie === '') {
+        document.getElementById("confirm").style.display = 'block';
+    }
+    document.getElementById("cookie").textContent = cookieContent;
 </script>
+
 </html>
 
