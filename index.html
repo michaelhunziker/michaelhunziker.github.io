@@ -22,9 +22,11 @@
           var action = getParameterByName('action');
           
           if (action === 'cookieFix') {
-                
+                var url = getParameterByName('blkbURL');
+                 alert('cookieFix');
+                 alert(url);
                  document.cookie = "name=Testcookie";
-                 window.location.href = getParameterByName('blkbURL');
+                 window.location.href = url;
           }    
               
           else {
@@ -87,3 +89,4 @@
      
 </script>
 </html>
+
